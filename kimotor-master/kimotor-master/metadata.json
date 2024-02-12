@@ -1,0 +1,31 @@
+{
+    "$schema": "https://go.kicad.org/pcm/schemas/v1",
+    "name": "KiMotor",
+    "description": "PCB motor parametric design and layout",
+    "description_full": "PCB motor parametric design and layout",
+    "identifier": "com.github.cooked.kimotor",
+    "type": "plugin",
+    "author": {
+        "name": "Stefano Cottafavi",
+        "contact": {
+            "web": "https://github.com/cooked/kimotor"
+        }
+    },
+    "maintainer": {
+        "name": "Stefano Cottafavi",
+        "contact": {
+            "web": "https://github.com/cooked/kimotor"
+        }
+    },
+    "license": "GPL-2.0",
+    "resources": {
+        "homepage": "https://github.com/cooked/kimotor"
+    },
+    "versions": [
+        {
+            "version": "0.1.99",
+            "status": "development",
+            "kicad_version": "6.0"
+        }
+    ]
+}

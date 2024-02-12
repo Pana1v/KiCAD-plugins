@@ -1,0 +1,84 @@
+(pcb "C:/Users/praaj/OneDrive - Indian Institute of Technology Patna/Portfolio/PCB/Ceir Mobility/kimotor-master/kimotor-master/kimotor-project\temp-freerouting.dsn"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "7.0.7")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer In1.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (layer In2.Cu
+      (type signal)
+      (property
+        (index 2)
+      )
+    )
+    (layer In3.Cu
+      (type signal)
+      (property
+        (index 3)
+      )
+    )
+    (layer In4.Cu
+      (type signal)
+      (property
+        (index 4)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 5)
+      )
+    )
+    (boundary
+      (path pcb 0  1000 -1000  -1000 -1000  -1000 1000  1000 1000  1000 -1000)
+    )
+    (via "Via[0-5]_800:400_um")
+    (rule
+      (width 250)
+      (clearance 200.1)
+      (clearance 200.1 (type default_smd))
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+  )
+  (library
+    (padstack "Via[0-5]_800:400_um"
+      (shape (circle F.Cu 800))
+      (shape (circle In1.Cu 800))
+      (shape (circle In2.Cu 800))
+      (shape (circle In3.Cu 800))
+      (shape (circle In4.Cu 800))
+      (shape (circle B.Cu 800))
+      (attach off)
+    )
+  )
+  (network
+    (class kicad_default ""
+      (circuit
+        (use_via Via[0-5]_800:400_um)
+      )
+      (rule
+        (width 250)
+        (clearance 200.1)
+      )
+    )
+  )
+  (wiring
+  )
+)

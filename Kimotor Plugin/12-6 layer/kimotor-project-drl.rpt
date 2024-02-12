@@ -1,0 +1,99 @@
+Drill report for kimotor-project.kicad_pcb
+Created on 2023-10-26T14:27:08+0530
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  In1.Cu                    in1
+    L3 :  In2.Cu                    in2
+    L4 :  In3.Cu                    in3
+    L5 :  In4.Cu                    in4
+    L6 :  B.Cu                      back
+
+
+Drill file 'kimotor-project-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.150mm  0.0059"  (34 holes)
+    T2  0.700mm  0.0276"  (6 holes)
+
+    Total plated holes count 40
+
+
+Drill file 'kimotor-project-front-in1.drl' contains
+    holes connecting layer pair: 'F.Cu and In1.Cu' (blind vias):
+    =============================================================
+    T1  0.150mm  0.0059"  (36 holes)
+
+    Total plated holes count 36
+
+
+Drill file 'kimotor-project-in1-in2.drl' contains
+    holes connecting layer pair: 'In1.Cu and In2.Cu' (buried vias):
+    =============================================================
+    T1  0.150mm  0.0059"  (36 holes)
+
+    Total plated holes count 36
+
+
+Drill file 'kimotor-project-in2-in3.drl' contains
+    holes connecting layer pair: 'In2.Cu and In3.Cu' (buried vias):
+    =============================================================
+    T1  0.150mm  0.0059"  (36 holes)
+
+    Total plated holes count 36
+
+
+Drill file 'kimotor-project-in3-in4.drl' contains
+    holes connecting layer pair: 'In3.Cu and In4.Cu' (buried vias):
+    =============================================================
+    T1  0.150mm  0.0059"  (36 holes)
+
+    Total plated holes count 36
+
+
+Drill file 'kimotor-project-in4-in5.drl' contains
+    holes connecting layer pair: 'In4.Cu and In5.Cu' (buried vias):
+    =============================================================
+    T1  0.150mm  0.0059"  (24 holes)
+
+    Total plated holes count 24
+
+
+Drill file 'kimotor-project-in5-in6.drl' contains
+    holes connecting layer pair: 'In5.Cu and In6.Cu' (buried vias):
+    =============================================================
+    T1  0.150mm  0.0059"  (24 holes)
+
+    Total plated holes count 24
+
+
+Drill file 'kimotor-project-in6-in7.drl' contains
+    holes connecting layer pair: 'In6.Cu and In7.Cu' (buried vias):
+    =============================================================
+    T1  0.150mm  0.0059"  (24 holes)
+
+    Total plated holes count 24
+
+
+Drill file 'kimotor-project-in7-in8.drl' contains
+    holes connecting layer pair: 'In7.Cu and In8.Cu' (buried vias):
+    =============================================================
+    T1  0.150mm  0.0059"  (24 holes)
+
+    Total plated holes count 24
+
+
+Drill file 'kimotor-project-in8-back.drl' contains
+    holes connecting layer pair: 'In8.Cu and B.Cu' (blind vias):
+    =============================================================
+    T1  0.150mm  0.0059"  (24 holes)
+
+    Total plated holes count 24
+
+
+Drill file 'kimotor-project-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0

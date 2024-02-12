@@ -1,0 +1,84 @@
+# Copyright 2022 Stefano Cottafavi <stefano.cottafavi@gmail.com>.
+# SPDX-License-Identifier: GPL-2.0-only
+
+name: Publish KiCad plugin
+
+
+on:
+  push:
+    tags:        
+      - 'v*'
+
+  workflow_dispatch:
+    inputs:
+      tag:
+        type: string
+        description: Release tag
+        default: "v0.0.99"
+        required: true
+      deploy:
+        type: boolean
+        description: Deploy to KiCad repo
+        default: false
+
+env:
+  GH_SECRET: "${{ secrets.GITHUB_TOKEN }}"
+  GL_SECRET: "${{ secrets.GITLAB_TOKEN }}"
+  
+
+jobs:
+
+  release-manual:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - run: |
+          echo "TAG=${{github.event.inputs.tag}}" >> $GITHUB_ENV
+          VERSION=${{github.event.inputs.tag}}
+          echo "VERSION=${VERSION:1}" >> $GITHUB_ENV
+      - name: Create Tag
+        uses: negz/create-tag@v1
+        with:
+          version: ${{ env.TAG }}
+          message: "Tag created automatically"
+          token: ${{env.GH_SECRET}}
+      - name: Create and Deploy KiCad plugin
+        uses: cooked/actions-kicad-addon@master
+        with:
+          version: ${{ env.VERSION }}
+          status: "development"
+          deploy: ${{inputs.deploy}}
+          desc: "PCB motor parametric design and layout"
+          desc_full: "PCB motor parametric design and layout"
+          author_name: "Stefano Cottafavi"
+          maintainer_name: "Stefano Cottafavi"
+          gitlab_user: 'stefano.cottafavi'
+          gitlab_email: 'stefano.cottafavi@gmail.com'
+          gitlab_token: ${{env.GL_SECRET}}
+
+
+  release-push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - run: |
+          echo "TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          VERSION=${GITHUB_REF#refs/*/}
+          echo "VERSION=${VERSION:1}" >> $GITHUB_ENV
+      - name: Create and Deploy KiCad plugin
+        uses: cooked/actions-kicad-addon@master
+        with:
+          version: ${{ env.VERSION }}
+          status: "development"
+          deploy: true
+          desc: "PCB motor parametric design and layout"
+          desc_full: "PCB motor parametric design and layout"
+          author_name: "Stefano Cottafavi"
+          maintainer_name: "Stefano Cottafavi"
+          gitlab_user: 'stefano.cottafavi'
+          gitlab_email: 'stefano.cottafavi@gmail.com'
+          gitlab_token: ${{env.GL_SECRET}}
